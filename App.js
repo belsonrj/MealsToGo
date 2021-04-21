@@ -4,9 +4,6 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
-import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
 import {
   useFonts as useOswald,
   Oswald_400Regular,
@@ -45,14 +42,8 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-      <AuthenticationContextProvider>
-        <FavoritesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigation />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavoritesContextProvider>
+        <AuthenticationContextProvider>
+          <Navigation />
         </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
