@@ -28,9 +28,11 @@ export const SettingsScreen = ({ navigation }) => {
   };
 
   //triggers render upon picture taken as opposed to on rerender
-  useFocusEffect(() => {
+  useFocusEffect(
+    React.useCallback(() => {
     getProfilePicture(user);
-  }, [user]);
+  }, [user, photo])
+  );
 
   return (
     <SafeArea>
